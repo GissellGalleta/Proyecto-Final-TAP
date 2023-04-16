@@ -1,6 +1,9 @@
 package controlador;
 
+import arreglos.Arreglos;
 import modelo.ModeloAlumno;
+import modelo.ModeloCatedratico;
+import modelo.ModeloEspecialidad;
 import vista.VentanaAlumno;
 import vista.VentanaPrincipal;
 
@@ -24,10 +27,18 @@ public class ControladorAlumno implements ActionListener{
     @Override
     public void actionPerformed (ActionEvent e){
         if (visionAlumno.btnGuardar == e.getSource()) {
-
-            System.out.println("Nombre: " + visionAlumno.jtxNombre.getText() + " Número de Control:" + Integer.parseInt(visionAlumno.jtxNumControl.getText())+"Especialidad: "+visionEspecialidad.jtxEspecialidad.getText());
-
-            JOptionPane.showMessageDialog(null, "Registro Guardado!", "AVISO", JOptionPane.INFORMATION_MESSAGE);
+            System.out.println("Nombre: " + visionAlumno.jtxNombre.getText() +
+                    " \nNúmero de Control:" + Integer.parseInt(visionAlumno.jtxNumControl.getText())
+                    +"Especialidad "+new ModeloEspecialidad());
+            Arreglos.alumno.add(new ModeloAlumno(
+                    Integer.parseInt(visionAlumno.jtxNumControl.getText()),
+                    visionAlumno.jtxNombre.getText(),
+                    new ModeloEspecialidad()
+            ));
+            JOptionPane.showMessageDialog(null,
+                    "Catedratico registrado con EXITO!",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
             clear();
         } else if (visionAlumno.btnSalir == e.getSource()) {
             Salir();
