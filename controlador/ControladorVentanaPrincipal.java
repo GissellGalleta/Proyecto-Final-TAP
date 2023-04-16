@@ -4,6 +4,7 @@ import vista.*;
 import modelo.ModeloEspecialidad;
 import modelo.ModeloAlumno;
 import modelo.ModeloCatedratico;
+import modelo.ModeloMateria;
 
 import javax.swing.*;
 import java.awt.*;
@@ -34,6 +35,9 @@ public class ControladorVentanaPrincipal implements ActionListener {
             }if(opcion.equals("Alta Especialidad")) {
                 new ImprimirEspecialidad();
             }
+            if(opcion.equals("Alta Materia")) {
+                new ImprimirMateria();
+            }
         } else {
             String opcion = ventanaPrincipal.cbxAltas.getSelectedItem().toString();
             if (opcion.equals("Alta Alumno")) {
@@ -54,7 +58,12 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 VentanaGrupo vg = new VentanaGrupo();
                 ModeloGrupo mg = new ModeloGrupo();
                 ControladorGrupo cg = new ControladorGrupo(mg, vg);
+            }else if  (opcion.equals("Alta Materia")) {
+                VentanaMateria vm = new VentanaMateria();
+                ModeloMateria mm = new ModeloMateria();
+                ControladorMateria cg = new ControladorMateria(mm, vm);
             }
+
             }
         }
 

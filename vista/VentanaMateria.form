@@ -18,7 +18,7 @@
               <text value="Materia"/>
             </properties>
           </component>
-          <component id="136bf" class="javax.swing.JTextField" binding="jtxMateria">
+          <component id="136bf" class="javax.swing.JTextField" binding="jtxNombre">
             <constraints/>
             <properties>
               <columns value="10"/>
