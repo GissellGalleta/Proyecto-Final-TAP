@@ -25,7 +25,9 @@ public class ControladorVentanaPrincipal implements ActionListener {
         if(e.getSource() == ventanaPrincipal.btnImprimir) {
             String opcion = ventanaPrincipal.cbxAltas.getSelectedItem().toString();
             if(opcion.equals("Alta Catedratico")) {
-                ImprimirCatedratico v2 =new ImprimirCatedratico();
+                new ImprimirCatedratico();
+            }if(opcion.equals("Alta Alumno")) {
+                new ImprimirAlumno();
             }
         } else {
             String opcion = ventanaPrincipal.cbxAltas.getSelectedItem().toString();

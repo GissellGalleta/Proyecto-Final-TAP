@@ -1,9 +1,13 @@
 package modelo;
 
 public class ModeloAlumno {
-    private int numControl;
-    private String nombre;
-    private ModeloEspecialidad modeloEspecialidad;
+    private static int numControl;
+    private static String nombre;
+    private static ModeloEspecialidad modeloEspecialidad;
+
+    public ModeloAlumno() {
+    }
+
 
     public ModeloAlumno(int numControl, String nombre, ModeloEspecialidad modeloEspecialidad) {
         this.numControl = numControl;
@@ -11,19 +15,7 @@ public class ModeloAlumno {
         this.modeloEspecialidad = modeloEspecialidad;
     }
 
-    public int getNumControl() {
-        return numControl;
-    }
-
-
-
-    public ModeloAlumno(int numControl, String nombre, ModeloEspecialidad modeloEspecialidad){
-        this.numControl=numControl;
-        this.nombre=nombre;
-        this.modeloEspecialidad=modeloEspecialidad;
-    }
-
-    public String getNombre() {
+    public static String getNombre() {
         return nombre;
     }
 
@@ -31,15 +23,15 @@ public class ModeloAlumno {
         this.nombre = nombre;
     }
 
-    public ModeloEspecialidad getModeloEspecialidad() {
-        return modeloEspecialidad;
+    public static int getNumControl() {
+        return numControl;
     }
 
-    public void setEspecialidad(ModeloEspecialidad especialidad) {
-        this.modeloEspecialidad = especialidad;
+    public void setNumControl(int numControl) {
+        this.numControl = numControl;
     }
 
-    public ModeloEspecialidad getModeloEspecialidad() {
+    public static ModeloEspecialidad getModeloEspecialidad() {
         return modeloEspecialidad;
     }
 
@@ -49,7 +41,6 @@ public class ModeloAlumno {
 
     @Override
     public String toString() {
-
         return "ModeloAlumno{" +
                 "numControl=" + numControl +
                 ", nombre='" + nombre + '\'' +
@@ -57,11 +48,7 @@ public class ModeloAlumno {
                 '}';
     }
 
-
-    public void imprimir(){
-
+    public void imprmir() {
         System.out.println(toString());
     }
 }
-
-//correccion
