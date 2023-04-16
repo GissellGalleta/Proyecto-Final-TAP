@@ -19,10 +19,10 @@ public class ImprimirAlumno extends JFrame{
         DefaultTableModel dtm = new DefaultTableModel(
                 Arreglos.alumno.stream()
                         .map(alumno -> new Object[]{
-                                ModeloAlumno.getNumControl(),
-                                ModeloAlumno.getNombre(),
-                                ModeloAlumno.getModeloEspecialidad().getID(),
-                                ModeloAlumno.getModeloEspecialidad().getNombre()
+                                alumno.getNumControl(),
+                                alumno.getNombre(),
+                                alumno.getModeloEspecialidad().getID(),
+                                alumno.getModeloEspecialidad().getNombre()
 
                         }).toArray(Object[][]::new),
                 new Object[]{"noControl", "Nombre","ID","Especialidad"}

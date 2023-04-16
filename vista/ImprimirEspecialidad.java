@@ -19,8 +19,8 @@ public class ImprimirEspecialidad extends JFrame {
         DefaultTableModel dtm = new DefaultTableModel(
                 Arreglos.especialidad.stream()
                         .map(especialidad -> new Object[]{
-                                ModeloEspecialidad.getNombre(),
-                                ModeloEspecialidad.getID()
+                                especialidad.getNombre(),
+                                especialidad.getID()
                         }).toArray(Object[][]::new),
                 new Object[]{"especialidad", "ID"}
         ) {

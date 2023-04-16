@@ -1,9 +1,9 @@
 package modelo;
 
 public class ModeloAlumno {
-    private static int numControl;
-    private static String nombre;
-    private static ModeloEspecialidad modeloEspecialidad;
+    private int numControl;
+    private String nombre;
+    private ModeloEspecialidad modeloEspecialidad;
 
     public ModeloAlumno() {
     }
@@ -15,7 +15,7 @@ public class ModeloAlumno {
         this.modeloEspecialidad = modeloEspecialidad;
     }
 
-    public static String getNombre() {
+    public String getNombre() {
         return nombre;
     }
 
@@ -23,7 +23,7 @@ public class ModeloAlumno {
         this.nombre = nombre;
     }
 
-    public static int getNumControl() {
+    public int getNumControl() {
         return numControl;
     }
 
@@ -31,7 +31,7 @@ public class ModeloAlumno {
         this.numControl = numControl;
     }
 
-    public static ModeloEspecialidad getModeloEspecialidad() {
+    public ModeloEspecialidad getModeloEspecialidad() {
         return modeloEspecialidad;
     }
 
@@ -44,7 +44,6 @@ public class ModeloAlumno {
         return "ModeloAlumno{" +
                 "numControl=" + numControl +
                 ", nombre='" + nombre + '\'' +
-                ", Especialidad=" + modeloEspecialidad +
                 '}';
     }
 

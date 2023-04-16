@@ -1,12 +1,15 @@
 package modelo;
 
 
+import java.util.ArrayList;
+
 public class ModeloGrupo {
-    public static String hora;
-    public static int clave, salon;
-    public static ModeloAlumno modeloAlumno;
-    public static ModeloMateria modeloMateria;
-    public static ModeloCatedratico modeloCatedratico;
+    public String hora;
+    public int clave, salon;
+    public ModeloAlumno modeloAlumno;//hacer array
+    public ArrayList<ModeloAlumno> alumno = new ArrayList<>();
+    public ModeloMateria modeloMateria;
+    public ModeloCatedratico modeloCatedratico;
     public ModeloGrupo() {
     }
 
@@ -21,7 +24,7 @@ public class ModeloGrupo {
     }
 
 
-    public static int getClave() {
+    public int getClave() {
         return clave;
     }
 
@@ -29,7 +32,7 @@ public class ModeloGrupo {
         this.clave = clave;
     }
 
-    public static String getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -37,7 +40,7 @@ public class ModeloGrupo {
         this.hora = hora;
     }
 
-    public static int getSalon() {
+    public int getSalon() {
         return salon;
     }
 
@@ -45,28 +48,28 @@ public class ModeloGrupo {
         this.salon = salon;
     }
 
-    public static ModeloAlumno getModeloAlumno() {
+   public ModeloAlumno getModeloAlumno() {
         return modeloAlumno;
     }
 
-    public static void setModeloAlumno(ModeloAlumno modeloAlumno) {
-        ModeloGrupo.modeloAlumno = modeloAlumno;
+    public void setModeloAlumno(ModeloAlumno modeloAlumno) {
+        this.modeloAlumno = modeloAlumno;
     }
 
-    public static ModeloCatedratico getModeloCatedratico() {
+    public ModeloCatedratico getModeloCatedratico() {
         return modeloCatedratico;
     }
 
-    public static void setModeloCatedratico(ModeloCatedratico modeloCatedratico) {
-        ModeloGrupo.modeloCatedratico = modeloCatedratico;
+    public void setModeloCatedratico(ModeloCatedratico modeloCatedratico) {
+        this.modeloCatedratico = modeloCatedratico;
     }
 
-    public static ModeloMateria getModeloMateria() {
+    public ModeloMateria getModeloMateria() {
         return modeloMateria;
     }
 
-    public static void setModeloMateria(ModeloMateria modeloMateria) {
-        ModeloGrupo.modeloMateria = modeloMateria;
+    public void setModeloMateria(ModeloMateria modeloMateria) {
+        this.modeloMateria = modeloMateria;
     }
 
     @Override

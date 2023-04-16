@@ -62,6 +62,12 @@
               <columns value="30"/>
             </properties>
           </component>
+          <component id="10bcd" class="javax.swing.JComboBox" binding="listaEspecialidad">
+            <constraints/>
+            <properties>
+              <model/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>
