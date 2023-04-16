@@ -2,8 +2,8 @@ package modelo;
 
 
 public class ModeloGrupo {
-    private String hora;
-    private int clave, salon;
+    public static String hora;
+    public static int clave, salon;
     public ModeloGrupo() {
     }
 
@@ -13,7 +13,7 @@ public class ModeloGrupo {
         this.salon = salon;
     }
 
-    public int getClave() {
+    public static int getClave() {
         return clave;
     }
 
@@ -21,7 +21,7 @@ public class ModeloGrupo {
         this.clave = clave;
     }
 
-    public String getHora() {
+    public static String getHora() {
         return hora;
     }
 
@@ -29,7 +29,7 @@ public class ModeloGrupo {
         this.hora = hora;
     }
 
-    public int getSalon() {
+    public static int getSalon() {
         return salon;
     }
 
@@ -41,9 +41,9 @@ public class ModeloGrupo {
     @Override
     public String toString() {
         return "ModeloGrupo{" +
-                "clave='" + clave + '\'' +
-                ", hora=" + hora +
-                ", salon=" + salon +
+                "Clave='" + clave + '\'' +
+                ", Hora=" + hora +
+                ", Salon=" + salon +
                 '}';
     }
 

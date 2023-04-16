@@ -1,4 +1,5 @@
 package controlador;
+import modelo.ModeloGrupo;
 import vista.*;
 import modelo.ModeloEspecialidad;
 import modelo.ModeloAlumno;
@@ -28,6 +29,8 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 new ImprimirCatedratico();
             }if(opcion.equals("Alta Alumno")) {
                 new ImprimirAlumno();
+            }if(opcion.equals("Alta Grupo")) {
+                new ImprimirGrupo();
             }
         } else {
             String opcion = ventanaPrincipal.cbxAltas.getSelectedItem().toString();
@@ -45,6 +48,10 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 VentanaEspecialidad ve = new VentanaEspecialidad();
                 ModeloEspecialidad me = new ModeloEspecialidad();
                 ControladorEspecialidad ce = new ControladorEspecialidad(me, ve);
+            }else if (opcion.equals("Alta Grupo")) {
+                VentanaGrupo vg = new VentanaGrupo();
+                ModeloGrupo mg = new ModeloGrupo();
+                ControladorGrupo cg = new ControladorGrupo(mg, vg);
             }
             }
         }
