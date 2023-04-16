@@ -1,8 +1,8 @@
 package modelo;
 
 public class ModeloEspecialidad{
-    public static int ID;
-    public static String nombre;
+    public  int ID;
+    public  String nombre;
 
     public ModeloEspecialidad(){}
 
@@ -11,7 +11,7 @@ public class ModeloEspecialidad{
         this.nombre=nombre;
     }
 
-    public static String getNombre() {
+    public  String getNombre() {
         return nombre;
     }
 
@@ -19,7 +19,7 @@ public class ModeloEspecialidad{
         this.nombre = nombre;
     }
 
-    public static int getID() {
+    public  int getID() {
         return ID;
     }
 

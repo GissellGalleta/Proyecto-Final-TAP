@@ -1,5 +1,8 @@
 package vista;
 
+import arreglos.Arreglos;
+import modelo.ModeloEspecialidad;
+
 import javax.swing.*;
 
 public class VentanaAlumno extends JFrame{
@@ -13,12 +16,19 @@ public class VentanaAlumno extends JFrame{
     public JButton btnSalir;
     public JTextField jtxNombre;
     private JLabel lblNombre;
+    public JComboBox listaEspecialidad;
 
     public VentanaAlumno(){
         setTitle("Alta Alumno");
         setContentPane(panel1);
-        setSize(500,140);
+        setSize(500,200);
         setLocationRelativeTo(null);
+        System.out.println(Arreglos.especialidad.size());
+        listaEspecialidad.removeAllItems();
+        for(ModeloEspecialidad e: Arreglos.especialidad) {
+            listaEspecialidad.addItem(e.getNombre());
+        }
+        //this.repaint();
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }

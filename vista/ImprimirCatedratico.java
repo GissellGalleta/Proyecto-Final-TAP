@@ -18,8 +18,8 @@ public class ImprimirCatedratico extends JFrame {
         DefaultTableModel dtm = new DefaultTableModel(
                 Arreglos.catedratico.stream()
                         .map(catedratico -> new Object[]{
-                                ModeloCatedratico.getRFC(),
-                                ModeloCatedratico.getNombre()
+                                catedratico.getRFC(),
+                                catedratico.getNombre()
                         }).toArray(Object[][]::new),
                 new Object[]{"RFC", "Nombre"}
         ) {

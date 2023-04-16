@@ -55,11 +55,11 @@
             <constraints border-constraint="Center"/>
             <properties>
               <model>
+                <item value="Alta Especialidad"/>
                 <item value="Alta Alumno"/>
                 <item value="Alta Catedratico"/>
-                <item value="Alta Grupo"/>
                 <item value="Alta Materia"/>
-                <item value="Alta Especialidad"/>
+                <item value="Alta Grupo"/>
               </model>
             </properties>
           </component>

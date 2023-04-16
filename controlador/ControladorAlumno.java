@@ -33,7 +33,11 @@ public class ControladorAlumno implements ActionListener{
             Arreglos.alumno.add(new ModeloAlumno(
                     Integer.parseInt(visionAlumno.jtxNumControl.getText()),
                     visionAlumno.jtxNombre.getText(),
-                    new ModeloEspecialidad()
+                    Arreglos.especialidad.stream().filter(
+                            esp -> esp.getNombre().equals(
+                                    visionAlumno.listaEspecialidad.getSelectedItem()
+                            )
+                    ).findFirst().get()
             ));
             JOptionPane.showMessageDialog(null,
                     "Catedratico registrado con EXITO!",

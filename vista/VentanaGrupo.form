@@ -75,6 +75,18 @@
               <columns value="10"/>
             </properties>
           </component>
+          <component id="1b16b" class="javax.swing.JComboBox" binding="cbxCatedratico">
+            <constraints/>
+            <properties/>
+          </component>
+          <component id="2b704" class="javax.swing.JComboBox" binding="cbxMateria">
+            <constraints/>
+            <properties/>
+          </component>
+          <component id="ce6f3" class="javax.swing.JComboBox" binding="cbxAlumno">
+            <constraints/>
+            <properties/>
+          </component>
         </children>
       </grid>
     </children>

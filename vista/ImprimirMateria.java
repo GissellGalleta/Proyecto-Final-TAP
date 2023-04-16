@@ -18,8 +18,8 @@ public class ImprimirMateria extends JFrame{
         DefaultTableModel dtm = new DefaultTableModel(
                 Arreglos.materia.stream()
                         .map(materia -> new Object[]{
-                                ModeloMateria.getNombre(),
-                                ModeloMateria.getId()
+                                materia.getNombre(),
+                                materia.getId()
                         }).toArray(Object[][]::new),
                 new Object[]{"Materia", "ID"}
         ) {

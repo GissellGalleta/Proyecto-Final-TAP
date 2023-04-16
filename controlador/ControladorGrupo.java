@@ -34,7 +34,22 @@ public class  ControladorGrupo implements ActionListener {
                     Integer.parseInt(visionGrupo.jtxtClave.getText()),
                     visionGrupo.jtxtHora.getText(),
                     Integer.parseInt(visionGrupo.jtxtSalon.getText()),
-                    new ModeloAlumno(),new ModeloMateria(),new ModeloCatedratico()
+                    Arreglos.alumno.stream().filter(
+                            alum -> alum.getNombre().equals(
+                                    visionGrupo.cbxAlumno.getSelectedItem()
+                            )
+                    ).findFirst().get(),
+                    Arreglos.materia.stream().filter(
+                            mat -> mat.getNombre().equals(
+                                    visionGrupo.cbxMateria.getSelectedItem()
+                            )
+                    ).findFirst().get(),
+                    Arreglos.catedratico.stream().filter(
+                            cat -> cat.getNombre().equals(
+                                    visionGrupo.cbxCatedratico.getSelectedItem()
+                            )
+                    ).findFirst().get()
+
             ));
 
             JOptionPane.showMessageDialog(null,
@@ -46,6 +61,7 @@ public class  ControladorGrupo implements ActionListener {
         } else if (visionGrupo.btnSalir == e.getSource()) {
             Salir();
         }
+
     }
     public void clear() {
         visionGrupo.jtxtClave.setText("");

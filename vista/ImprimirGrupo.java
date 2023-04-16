@@ -21,12 +21,12 @@ public class ImprimirGrupo extends JFrame {
         DefaultTableModel dtm = new DefaultTableModel(
                 Arreglos.grupo.stream()
                         .map( grupo -> new Object[]{
-                                ModeloGrupo.getClave(),
-                                ModeloGrupo.getHora(),
-                                ModeloGrupo.getSalon(),
-                                ModeloGrupo.getModeloAlumno().getNombre(),
-                                ModeloGrupo.getModeloMateria().getNombre(),
-                                ModeloGrupo.getModeloCatedratico().getNombre()
+                                grupo.getClave(),
+                                grupo.getHora(),
+                                grupo.getSalon(),
+                                grupo.getModeloAlumno().getNombre(),
+                                grupo.getModeloMateria().getNombre(),
+                                grupo.getModeloCatedratico().getNombre()
                         }).toArray(Object[][]::new),
                 new Object[]{"Clave", "Hora", "Salon","Alumno","Materia","Catedratico"}
         ) {
