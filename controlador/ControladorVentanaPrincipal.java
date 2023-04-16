@@ -31,6 +31,8 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 new ImprimirAlumno();
             }if(opcion.equals("Alta Grupo")) {
                 new ImprimirGrupo();
+            }if(opcion.equals("Alta Especialidad")) {
+                new ImprimirEspecialidad();
             }
         } else {
             String opcion = ventanaPrincipal.cbxAltas.getSelectedItem().toString();

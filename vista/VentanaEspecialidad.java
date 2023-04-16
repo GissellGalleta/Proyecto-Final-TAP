@@ -21,5 +21,6 @@ public class VentanaEspecialidad extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        //*//
     }
 }

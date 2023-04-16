@@ -1,17 +1,17 @@
 package modelo;
 
 public class ModeloEspecialidad{
-    private int ID;
-    private String nombre;
+    public static int ID;
+    public static String nombre;
 
     public ModeloEspecialidad(){}
 
-    public ModeloEspecialidad(int ID, String Nombre){
+    public ModeloEspecialidad(int ID, String nombre){
         this.ID=ID;
         this.nombre=nombre;
     }
 
-    public String getNombre() {
+    public static String getNombre() {
         return nombre;
     }
 
@@ -19,7 +19,7 @@ public class ModeloEspecialidad{
         this.nombre = nombre;
     }
 
-    public int getID() {
+    public static int getID() {
         return ID;
     }
 
@@ -29,13 +29,13 @@ public class ModeloEspecialidad{
 
     @Override
     public String toString() {
-        return "Especialidad{" +
+        return "Modelo Especialidad{" +
                 "ID=" + ID +
                 ", nombre='" + nombre + '\'' +
                 '}';
     }
     public void imprmir(){
         System.out.println(toString());
+
     }
 }
-
