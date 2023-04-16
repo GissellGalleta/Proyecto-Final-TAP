@@ -8,7 +8,7 @@ public class VentanaMateria extends JFrame {
     private JPanel panelSur;
     public JPanel panelCentro;
     public
-    JTextField jtxMateria;
+    JTextField jtxNombre;
     public JButton btnGuardar;
     public
     JButton btnSalir;
