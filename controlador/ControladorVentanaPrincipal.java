@@ -32,6 +32,8 @@ public class ControladorVentanaPrincipal implements ActionListener {
                 new ImprimirAlumno();
             }if(opcion.equals("Alta Grupo")) {
                 new ImprimirGrupo();
+            }if(opcion.equals("Alta Especialidad")) {
+                new ImprimirEspecialidad();
             }
             if(opcion.equals("Alta Materia")) {
                 new ImprimirMateria();

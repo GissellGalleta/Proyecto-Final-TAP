@@ -1,7 +1,6 @@
 package controlador;
 
 import arreglos.Arreglos;
-import modelo.ModeloCatedratico;
 import modelo.ModeloEspecialidad;
 import vista.VentanaEspecialidad;
 import vista.VentanaPrincipal;
@@ -11,37 +10,45 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class ControladorEspecialidad implements ActionListener {
     private final ModeloEspecialidad modeloEspecialidad;
-    private final VentanaEspecialidad visionEspecialidad;
+    private final VentanaEspecialidad vistaEspecialidad;
 
-    public ControladorEspecialidad(ModeloEspecialidad modeloEspecialidad, VentanaEspecialidad visionEspecialidad) {
+    public ControladorEspecialidad(ModeloEspecialidad modeloEspecialidad, VentanaEspecialidad vistaEspecialidad) {
         this.modeloEspecialidad = modeloEspecialidad;
-        this.visionEspecialidad = visionEspecialidad;
+        this.vistaEspecialidad = vistaEspecialidad;
 
-        this.visionEspecialidad.btnGuardar.addActionListener(this);
-        this.visionEspecialidad.btnSalir.addActionListener(this);
+        this.vistaEspecialidad.btnGuardar.addActionListener(this);
+        this.vistaEspecialidad.btnSalir.addActionListener(this);
     }
 
     @Override
     public void actionPerformed (ActionEvent e){
-        if (visionEspecialidad.btnGuardar == e.getSource()) {
-            System.out.println("Nombre: " + visionEspecialidad.jtxNombre.getText() + " ID:" + Integer.parseInt(visionEspecialidad.jtxID.getText()));
-            JOptionPane.showMessageDialog(null, "Registro Guardado!", "AVISO", JOptionPane.INFORMATION_MESSAGE);
+        if (vistaEspecialidad.btnGuardar == e.getSource()) {
+            System.out.println("Nombre: " + vistaEspecialidad.jtxNombre.getText() + " ID :"+ Integer.parseInt (vistaEspecialidad.jtxID.getText()));
+            Arreglos.especialidad.add(new ModeloEspecialidad(
+                    Integer.parseInt (vistaEspecialidad.jtxID.getText()),
+                    vistaEspecialidad.jtxNombre.getText()
+            ));
+            JOptionPane.showMessageDialog(null,
+                    "Especialidad registrado con EXITO!",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
             clear();
-        } else if (visionEspecialidad.btnSalir == e.getSource()) {
+        } else if (vistaEspecialidad.btnSalir == e.getSource()) {
             Salir();
         }
+
     }
 
 
-        public void clear () {
-            visionEspecialidad.jtxNombre.setText("");
-            visionEspecialidad.jtxID.setText("");
-        }
-
-        public void Salir () {
-            System.exit(0);
-        }
+    public void clear () {
+        vistaEspecialidad.jtxNombre.setText("");
+        vistaEspecialidad.jtxID.setText("");
     }
+
+    public void Salir () {
+        System.exit(0);
+    }
+}
 
 
 
