@@ -1,7 +1,10 @@
 package controlador;
 
 import arreglos.Arreglos;
+import modelo.ModeloAlumno;
+import modelo.ModeloCatedratico;
 import modelo.ModeloGrupo;
+import modelo.ModeloMateria;
 import vista.VentanaGrupo;
 import vista.VentanaPrincipal;
 
@@ -14,8 +17,8 @@ public class  ControladorGrupo implements ActionListener {
     private final VentanaGrupo visionGrupo;
 
     public ControladorGrupo(ModeloGrupo modeloGrupo, VentanaGrupo visionGrupo) {
-        this.modeloGrupo =modeloGrupo;
-        this.visionGrupo =visionGrupo;
+        this.modeloGrupo = modeloGrupo;
+        this.visionGrupo = visionGrupo;
 
         this.visionGrupo.btnGuardar.addActionListener(this);
         this.visionGrupo.btnSalir.addActionListener(this);
@@ -30,10 +33,9 @@ public class  ControladorGrupo implements ActionListener {
             Arreglos.grupo.add(new ModeloGrupo(
                     Integer.parseInt(visionGrupo.jtxtClave.getText()),
                     visionGrupo.jtxtHora.getText(),
-                    Integer.parseInt(visionGrupo.jtxtSalon.getText())
-
+                    Integer.parseInt(visionGrupo.jtxtSalon.getText()),
+                    new ModeloAlumno(),new ModeloMateria(),new ModeloCatedratico()
             ));
-
 
             JOptionPane.showMessageDialog(null,
                     "Registro Guardado!",

@@ -10,7 +10,7 @@ public class ImprimirAlumno extends JFrame{
     private JPanel panel1;
     private JTable tableAlumno;
     public ImprimirAlumno() {
-        super("Catedraticos");
+        super("Alumnos");
         setContentPane(panel1);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 500);
@@ -23,6 +23,7 @@ public class ImprimirAlumno extends JFrame{
                                 ModeloAlumno.getNombre(),
                                 ModeloAlumno.getModeloEspecialidad().getID(),
                                 ModeloAlumno.getModeloEspecialidad().getNombre()
+
                         }).toArray(Object[][]::new),
                 new Object[]{"noControl", "Nombre","ID","Especialidad"}
         ) {

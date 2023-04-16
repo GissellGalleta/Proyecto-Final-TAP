@@ -1,3 +1,4 @@
+import arreglos.Arreglos;
 import controlador.ControladorAlumno;
 import controlador.ControladorCatedratico;
 import controlador.ControladorVentanaPrincipal;
