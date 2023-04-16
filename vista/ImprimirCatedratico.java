@@ -11,7 +11,7 @@ public class ImprimirCatedratico extends JFrame {
     public ImprimirCatedratico() {
         super("Catedraticos");
         setContentPane(panel1);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 500);
 
 

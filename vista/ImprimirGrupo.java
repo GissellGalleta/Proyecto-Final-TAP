@@ -14,7 +14,7 @@ public class ImprimirGrupo extends JFrame {
     public ImprimirGrupo() {
         super("Grupos");
         setContentPane(panel1);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 500);
 
 
@@ -23,9 +23,12 @@ public class ImprimirGrupo extends JFrame {
                         .map( grupo -> new Object[]{
                                 ModeloGrupo.getClave(),
                                 ModeloGrupo.getHora(),
-                                ModeloGrupo.getSalon()
+                                ModeloGrupo.getSalon(),
+                                ModeloGrupo.getModeloAlumno().getNombre(),
+                                ModeloGrupo.getModeloMateria().getNombre(),
+                                ModeloGrupo.getModeloCatedratico().getNombre()
                         }).toArray(Object[][]::new),
-                new Object[]{"Clave", "Hora", "Salon"}
+                new Object[]{"Clave", "Hora", "Salon","Alumno","Materia","Catedratico"}
         ) {
             @Override
             public boolean isCellEditable(int row, int column) {

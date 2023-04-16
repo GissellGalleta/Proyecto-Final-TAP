@@ -60,7 +60,6 @@
                 <item value="Alta Grupo"/>
                 <item value="Alta Materia"/>
                 <item value="Alta Especialidad"/>
-                <item value="Imprimir BD"/>
               </model>
             </properties>
           </component>
