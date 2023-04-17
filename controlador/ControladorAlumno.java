@@ -5,6 +5,7 @@ import modelo.ModeloAlumno;
 import modelo.ModeloCatedratico;
 import modelo.ModeloEspecialidad;
 import vista.VentanaAlumno;
+import vista.VentanaEspecialidad;
 import vista.VentanaPrincipal;
 
 import javax.swing.*;
@@ -12,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ControladorAlumno implements ActionListener{
-
     private final ModeloAlumno modeloAlumno;
     private final VentanaAlumno visionAlumno;
 
@@ -29,7 +29,7 @@ public class ControladorAlumno implements ActionListener{
         if (visionAlumno.btnGuardar == e.getSource()) {
             System.out.println("Nombre: " + visionAlumno.jtxNombre.getText() +
                     " \nNúmero de Control:" + Integer.parseInt(visionAlumno.jtxNumControl.getText())
-                    +"Especialidad "+new ModeloEspecialidad());
+                    +"\n ----------------------------------");
             Arreglos.alumno.add(new ModeloAlumno(
                     Integer.parseInt(visionAlumno.jtxNumControl.getText()),
                     visionAlumno.jtxNombre.getText(),

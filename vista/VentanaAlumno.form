@@ -62,6 +62,12 @@
               <columns value="30"/>
             </properties>
           </component>
+          <component id="52594" class="javax.swing.JLabel" binding="lblEspecialidad">
+            <constraints/>
+            <properties>
+              <text value="          Especialidad:"/>
+            </properties>
+          </component>
           <component id="10bcd" class="javax.swing.JComboBox" binding="listaEspecialidad">
             <constraints/>
             <properties>

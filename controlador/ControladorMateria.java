@@ -26,7 +26,8 @@ public class ControladorMateria implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (visionMateria.btnGuardar == e.getSource()) {
             System.out.println("Materia: " + visionMateria.jtxNombre.getText()
-                    + " ID:" + Integer.parseInt(visionMateria.jtxID.getText()));
+                    + "\n ID:" + Integer.parseInt(visionMateria.jtxID.getText())
+                    +"\n ----------------------------------");
             Arreglos.materia.add(new ModeloMateria(Integer.parseInt(visionMateria.jtxID.getText()),
                     visionMateria.jtxNombre.getText()
             ));

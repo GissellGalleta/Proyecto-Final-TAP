@@ -23,6 +23,9 @@ public class VentanaGrupo extends JFrame {
     public JComboBox cbxCatedratico;
     public JComboBox cbxMateria;
     public JComboBox cbxAlumno;
+    private JLabel lblCatedratico;
+    private JLabel lblAlumno;
+    private JLabel lblMateria;
 
     public VentanaGrupo(){
         setTitle("Alta Grupo");
