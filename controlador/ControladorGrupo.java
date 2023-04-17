@@ -28,8 +28,9 @@ public class  ControladorGrupo implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (visionGrupo.btnGuardar == e.getSource()) {
             System.out.println("Clave: " + Integer.parseInt(visionGrupo.jtxtClave.getText())
-                    + " Hora: " + visionGrupo.jtxtHora.getText() + " Salon: "
-                    + Integer.parseInt(visionGrupo.jtxtSalon.getText()));
+                    + "\n Hora: " + visionGrupo.jtxtHora.getText() + "\n Salon: "
+                    + Integer.parseInt(visionGrupo.jtxtSalon.getText())
+                    +"\n ----------------------------------");
             Arreglos.grupo.add(new ModeloGrupo(
                     Integer.parseInt(visionGrupo.jtxtClave.getText()),
                     visionGrupo.jtxtHora.getText(),

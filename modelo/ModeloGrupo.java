@@ -6,8 +6,7 @@ import java.util.ArrayList;
 public class ModeloGrupo {
     public String hora;
     public int clave, salon;
-    public ModeloAlumno modeloAlumno;//hacer array
-    public ArrayList<ModeloAlumno> alumno = new ArrayList<>();
+    public ModeloAlumno modeloAlumno;
     public ModeloMateria modeloMateria;
     public ModeloCatedratico modeloCatedratico;
     public ModeloGrupo() {

@@ -26,7 +26,8 @@ public class ControladorCatedratico implements ActionListener {
     public void actionPerformed (ActionEvent e){
         if (vistaCatedratico.btnGuardar == e.getSource()) { // quite Integer.parseInt --------v
             System.out.println("Nombre: " + vistaCatedratico.jtxNombre.getText()
-                    + " \nRFC:" + (vistaCatedratico.jtxRFC.getText()));
+                    + " \nRFC:" + (vistaCatedratico.jtxRFC.getText())
+                    +"\n ----------------------------------");
             Arreglos.catedratico.add(new ModeloCatedratico(
                     vistaCatedratico.jtxRFC.getText(),
                     vistaCatedratico.jtxNombre.getText()

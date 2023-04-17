@@ -17,13 +17,14 @@ public class VentanaAlumno extends JFrame{
     public JTextField jtxNombre;
     private JLabel lblNombre;
     public JComboBox listaEspecialidad;
+    private JLabel lblEspecialidad;
 
     public VentanaAlumno(){
         setTitle("Alta Alumno");
         setContentPane(panel1);
         setSize(500,200);
         setLocationRelativeTo(null);
-        System.out.println(Arreglos.especialidad.size());
+        //System.out.println(Arreglos.especialidad.size());
         listaEspecialidad.removeAllItems();
         for(ModeloEspecialidad e: Arreglos.especialidad) {
             listaEspecialidad.addItem(e.getNombre());

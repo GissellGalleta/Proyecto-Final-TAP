@@ -23,7 +23,9 @@ public class ControladorEspecialidad implements ActionListener {
     @Override
     public void actionPerformed (ActionEvent e){
         if (vistaEspecialidad.btnGuardar == e.getSource()) {
-            System.out.println("Nombre: " + vistaEspecialidad.jtxNombre.getText() + " ID :"+ Integer.parseInt (vistaEspecialidad.jtxID.getText()));
+            System.out.println("Nombre: " + vistaEspecialidad.jtxNombre.getText()
+                    + "\n ID :"+ Integer.parseInt (vistaEspecialidad.jtxID.getText())
+                    +"\n ----------------------------------");
             Arreglos.especialidad.add(new ModeloEspecialidad(
                     Integer.parseInt (vistaEspecialidad.jtxID.getText()),
                     vistaEspecialidad.jtxNombre.getText()
