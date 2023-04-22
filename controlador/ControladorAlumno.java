@@ -26,26 +26,67 @@ public class ControladorAlumno implements ActionListener{
 
     @Override
     public void actionPerformed (ActionEvent e){
-        if (visionAlumno.btnGuardar == e.getSource()) {
-            System.out.println("Nombre: " + visionAlumno.jtxNombre.getText() +
-                    " \nNúmero de Control:" + Integer.parseInt(visionAlumno.jtxNumControl.getText())
-                    +"\n ----------------------------------");
-            Arreglos.alumno.add(new ModeloAlumno(
-                    Integer.parseInt(visionAlumno.jtxNumControl.getText()),
-                    visionAlumno.jtxNombre.getText(),
-                    Arreglos.especialidad.stream().filter(
-                            esp -> esp.getNombre().equals(
-                                    visionAlumno.listaEspecialidad.getSelectedItem()
-                            )
-                    ).findFirst().get()
-            ));
+        String cadena=visionAlumno.jtxNumControl.getText();
+        int noControl = 0;
+        boolean err = true;
+        String nombre=visionAlumno.jtxNombre.getText();
+
+        if (nombre.length()>0){
+
+        } else if (nombre.length()==0&cadena.length()>0&Arreglos.especialidad.size()>0) {
+                JOptionPane.showMessageDialog(null,
+                        "Faltan Datos",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                err = false;
+         }
+        if (cadena.length()==0&nombre.length()==0){
             JOptionPane.showMessageDialog(null,
-                    "Catedratico registrado con EXITO!",
+                    "Faltan Datos",
                     "AVISO",
                     JOptionPane.INFORMATION_MESSAGE);
-            clear();
-        } else if (visionAlumno.btnSalir == e.getSource()) {
-            Salir();
+            err = false;
+        } else if (cadena.length()>0&nombre.length()>0) {
+            try {
+                noControl = Integer.parseInt(visionAlumno.jtxNumControl.getText());
+            } catch (Exception error) {
+                JOptionPane.showMessageDialog(null,
+                        "Se ingreso una letra en el noControl",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                err = false;
+            }
+        }
+        if (err==true) {
+            try {
+                if (visionAlumno.btnGuardar == e.getSource()) {
+                    System.out.println("Nombre: " + nombre +
+                            " \nNúmero de Control:" + noControl+
+                            "\n Especialidad: " + visionAlumno.listaEspecialidad.getSelectedItem()
+                            + "\n ----------------------------------");
+
+                    Arreglos.alumno.add(new ModeloAlumno(noControl,
+                            nombre,
+                            Arreglos.especialidad.stream().filter(
+                                    esp -> esp.getNombre().equals(
+                                            visionAlumno.listaEspecialidad.getSelectedItem()
+                                    )
+                            ).findFirst().get()
+                    ));
+                    JOptionPane.showMessageDialog(null,
+                            "Alumno registrado con EXITO!",
+                            "AVISO",
+                            JOptionPane.INFORMATION_MESSAGE);
+                    clear();
+                } else if (visionAlumno.btnSalir == e.getSource()) {
+                    Salir();
+                }
+            } catch (Exception error) {
+                JOptionPane.showMessageDialog(null,
+                        "Faltan Datos",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }
 
