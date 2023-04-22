@@ -22,23 +22,60 @@ public class ControladorEspecialidad implements ActionListener {
 
     @Override
     public void actionPerformed (ActionEvent e){
-        if (vistaEspecialidad.btnGuardar == e.getSource()) {
-            System.out.println("Nombre: " + vistaEspecialidad.jtxNombre.getText()
-                    + "\n ID :"+ Integer.parseInt (vistaEspecialidad.jtxID.getText())
-                    +"\n ----------------------------------");
-            Arreglos.especialidad.add(new ModeloEspecialidad(
-                    Integer.parseInt (vistaEspecialidad.jtxID.getText()),
-                    vistaEspecialidad.jtxNombre.getText()
-            ));
+        String cadena=vistaEspecialidad.jtxID.getText();
+        String nomb=vistaEspecialidad.jtxNombre.getText();
+        int id=0;
+        boolean err=true;
+
+        if (nomb.length()>0&cadena.length()==0){
             JOptionPane.showMessageDialog(null,
-                    "Especialidad registrado con EXITO!",
+                    "Faltan Datos",
                     "AVISO",
                     JOptionPane.INFORMATION_MESSAGE);
-            clear();
-        } else if (vistaEspecialidad.btnSalir == e.getSource()) {
-            Salir();
+            err = false;
+        } else if (nomb.length()==0&cadena.length()>0) {
+            JOptionPane.showMessageDialog(null,
+                    "Faltan Datos",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+            err = false;
         }
+        if (cadena.length()==0&nomb.length()==0){
+            JOptionPane.showMessageDialog(null,
+                    "Faltan Datos",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+            err = false;
 
+        } else if (cadena.length()>0&nomb.length()>0) {
+            try {
+                id = Integer.parseInt(vistaEspecialidad.jtxID.getText());
+            } catch (Exception error) {
+                JOptionPane.showMessageDialog(null,
+                        "Se ingreso una letra en el ID",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                err = false;
+            }
+        }
+        if (err==true) {
+            if (vistaEspecialidad.btnGuardar == e.getSource()) {
+                System.out.println("Nombre: " + nomb
+                        + "\n ID :" + id
+                        + "\n ----------------------------------");
+                Arreglos.especialidad.add(new ModeloEspecialidad(
+                        id,
+                        nomb
+                ));
+                JOptionPane.showMessageDialog(null,
+                        "Especialidad registrada con EXITO!",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                clear();
+            } else if (vistaEspecialidad.btnSalir == e.getSource()) {
+                Salir();
+            }
+        }
     }
 
 

@@ -22,7 +22,7 @@ public class VentanaCatedratico extends JFrame{
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
-    void createUIComponents(){
+   // void createUIComponents(){
 
-    }
+    //}
 }

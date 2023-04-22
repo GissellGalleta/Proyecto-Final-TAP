@@ -23,26 +23,60 @@ public class ControladorCatedratico implements ActionListener {
     }
 
     @Override
-    public void actionPerformed (ActionEvent e){
-        if (vistaCatedratico.btnGuardar == e.getSource()) { // quite Integer.parseInt --------v
-            System.out.println("Nombre: " + vistaCatedratico.jtxNombre.getText()
-                    + " \nRFC:" + (vistaCatedratico.jtxRFC.getText())
-                    +"\n ----------------------------------");
-            Arreglos.catedratico.add(new ModeloCatedratico(
-                    vistaCatedratico.jtxRFC.getText(),
-                    vistaCatedratico.jtxNombre.getText()
-            ));
+    public void actionPerformed (ActionEvent e) {
+        String nom = vistaCatedratico.jtxNombre.getText();
+        String rfc = vistaCatedratico.jtxRFC.getText();
+        boolean err = true;
+        if (rfc.length() > 0&nom.length()>0) {
+
+        } else if (rfc.length() == 0&nom.length()==0) {
             JOptionPane.showMessageDialog(null,
-                    "Catedratico registrado con EXITO!",
+                    "Faltan Datos",
                     "AVISO",
                     JOptionPane.INFORMATION_MESSAGE);
-            clear();
-        } else if (vistaCatedratico.btnSalir == e.getSource()) {
-            Salir();
+            err = false;
         }
 
-    }
+        if (rfc.length() > 0) {
 
+        } else if (rfc.length() == 0&nom.length()>0) {
+            JOptionPane.showMessageDialog(null,
+                    "Faltan Datos",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+            err = false;
+        }
+        if (nom.length() > 0) {
+
+        } else if (nom.length() == 0&rfc.length()>0) {
+            JOptionPane.showMessageDialog(null,
+                    "Faltan Datos",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+            err = false;
+        }
+
+        if (err == true) {
+            if (vistaCatedratico.btnGuardar == e.getSource()) { // quite Integer.parseInt --------v
+                System.out.println("Nombre: " + nom
+                        + " \nRFC:" + rfc
+                        + "\n ----------------------------------");
+
+                Arreglos.catedratico.add(new ModeloCatedratico(
+                        rfc,
+                        nom
+                ));
+                JOptionPane.showMessageDialog(null,
+                        "Catedratico registrado con EXITO!",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                clear();
+
+            } else if (vistaCatedratico.btnSalir == e.getSource()) {
+                Salir();
+            }
+        }
+    }
     public void clear () {
         vistaCatedratico.jtxNombre.setText("");
         vistaCatedratico.jtxRFC.setText("");

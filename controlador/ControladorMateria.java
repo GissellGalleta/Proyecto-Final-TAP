@@ -24,23 +24,60 @@ public class ControladorMateria implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (visionMateria.btnGuardar == e.getSource()) {
-            System.out.println("Materia: " + visionMateria.jtxNombre.getText()
-                    + "\n ID:" + Integer.parseInt(visionMateria.jtxID.getText())
-                    +"\n ----------------------------------");
-            Arreglos.materia.add(new ModeloMateria(Integer.parseInt(visionMateria.jtxID.getText()),
-                    visionMateria.jtxNombre.getText()
-            ));
+        String cadena=visionMateria.jtxID.getText();
+        String nomb=visionMateria.jtxNombre.getText();
+        int id=0;
+        boolean err=true;
 
+        if (nomb.length()>0&cadena.length()==0){
             JOptionPane.showMessageDialog(null,
-                    "Materia registrada con EXITO!",
+                    "Faltan Datos",
                     "AVISO",
                     JOptionPane.INFORMATION_MESSAGE);
-            clear();
-        } else if (visionMateria.btnSalir == e.getSource()) {
-            Salir();
+            err = false;
+        } else if (nomb.length()==0&cadena.length()>0) {
+            JOptionPane.showMessageDialog(null,
+                    "Faltan Datos",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+            err = false;
         }
+        if (cadena.length()==0&nomb.length()==0){
+            JOptionPane.showMessageDialog(null,
+                    "Faltan Datos",
+                    "AVISO",
+                    JOptionPane.INFORMATION_MESSAGE);
+            err = false;
 
+        } else if (cadena.length()>0&nomb.length()>0) {
+            try {
+                id = Integer.parseInt(visionMateria.jtxID.getText());
+            } catch (Exception error) {
+                JOptionPane.showMessageDialog(null,
+                        "Se ingreso una letra en el ID",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                err = false;
+            }
+        }
+        if (err==true) {
+            if (visionMateria.btnGuardar == e.getSource()) {
+                System.out.println("Materia: " + nomb
+                        + "\n ID:" + id
+                        + "\n ----------------------------------");
+                Arreglos.materia.add(new ModeloMateria(id,
+                        nomb
+                ));
+
+                JOptionPane.showMessageDialog(null,
+                        "Materia registrada con EXITO!",
+                        "AVISO",
+                        JOptionPane.INFORMATION_MESSAGE);
+                clear();
+            } else if (visionMateria.btnSalir == e.getSource()) {
+                Salir();
+            }
+        }
     }
 
     public void clear () {
